@@ -65,7 +65,7 @@ def compute_metrics(eval_pred, task_metrics):
         if metric_name in ["pearsonr", "spearmanr"]:
             score = metric_func(labels, np.squeeze(predictions))
         elif metric_name in ["f1_score"]:
-            score = metric_func(np.argmax(predictions, axis=-1), labels, average="binary")
+            score = metric_func(np.argmax(predictions, axis=-1), labels, average="macro")
         else:
             score = metric_func(np.argmax(predictions, axis=-1), labels)
 
