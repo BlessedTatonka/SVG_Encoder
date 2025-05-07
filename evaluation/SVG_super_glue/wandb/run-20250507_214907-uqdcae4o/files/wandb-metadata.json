@@ -1,0 +1,114 @@
+{
+    "os": "Linux-6.8.0-59-generic-x86_64-with-glibc2.35",
+    "python": "CPython 3.10.14",
+    "heartbeatAt": "2025-05-07T21:49:07.820539",
+    "startedAt": "2025-05-07T21:49:07.291923",
+    "docker": null,
+    "args": [
+        "service",
+        "--debug",
+        "--port-filename",
+        "/tmp/tmp8uu2osmj/port-221666.txt",
+        "--pid",
+        "221666"
+    ],
+    "state": "running",
+    "program": "/data/SVG_Encoder/evaluation/SVG_super_glue/train_sweeps.py",
+    "codePathLocal": "train_sweeps.py",
+    "codePath": "evaluation/SVG_super_glue/train_sweeps.py",
+    "git": {
+        "remote": "https://github.com/BlessedTatonka/SVG_Encoder.git",
+        "commit": "e7f8673c7e94fb87e933dc7f3db4959ddab30b4d"
+    },
+    "email": "quelquemath@gmail.com",
+    "root": "/data/SVG_Encoder",
+    "host": "5b7eeb020761",
+    "username": null,
+    "executable": "/opt/conda/bin/python3",
+    "cpu_count": 6,
+    "cpu_count_logical": 12,
+    "cpu_freq": {
+        "current": 3.2205,
+        "min": 2200.0,
+        "max": 3600.0
+    },
+    "cpu_freq_per_core": [
+        {
+            "current": 4.182,
+            "min": 2200.0,
+            "max": 3600.0
+        },
+        {
+            "current": 2.795,
+            "min": 2200.0,
+            "max": 3600.0
+        },
+        {
+            "current": 4.193,
+            "min": 2200.0,
+            "max": 3600.0
+        },
+        {
+            "current": 4.189,
+            "min": 2200.0,
+            "max": 3600.0
+        },
+        {
+            "current": 4.192,
+            "min": 2200.0,
+            "max": 3600.0
+        },
+        {
+            "current": 2.797,
+            "min": 2200.0,
+            "max": 3600.0
+        },
+        {
+            "current": 2.2,
+            "min": 2200.0,
+            "max": 3600.0
+        },
+        {
+            "current": 2.095,
+            "min": 2200.0,
+            "max": 3600.0
+        },
+        {
+            "current": 2.2,
+            "min": 2200.0,
+            "max": 3600.0
+        },
+        {
+            "current": 3.894,
+            "min": 2200.0,
+            "max": 3600.0
+        },
+        {
+            "current": 3.6,
+            "min": 2200.0,
+            "max": 3600.0
+        },
+        {
+            "current": 2.801,
+            "min": 2200.0,
+            "max": 3600.0
+        }
+    ],
+    "disk": {
+        "/": {
+            "total": 488983355392,
+            "used": 393493209088
+        }
+    },
+    "gpu": "NVIDIA GeForce RTX 4060 Ti",
+    "gpu_count": 1,
+    "gpu_devices": [
+        {
+            "name": "NVIDIA GeForce RTX 4060 Ti",
+            "memory_total": 8585740288
+        }
+    ],
+    "memory": {
+        "total": 33574924288
+    }
+}

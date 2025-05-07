@@ -1,0 +1,30 @@
+name: "SVG-SuperGlue"
+method: grid
+metric:
+  goal: maximize
+  name: eval/global_metric
+parameters:
+  model_name:
+    value: "VectorGraphics/svg-encoder-base"
+  model_revision:
+    value: "main"
+  learning_rate:
+    distribution: categorical
+    values: [2e-5, 5e-5, 1e-4]
+  weight_decay:
+    distribution: categorical
+    values: [0, 1e-2, 1e-1]
+  batch_size:
+    distribution: categorical
+    values: [8, 16, 32]
+  num_train_epochs:
+    distribution: categorical
+    values: [2, 3, 5, 10]
+  lr_scheduler_type:
+    distribution: categorical
+    values: ['cosine', 'inverse_sqrt']
+  task_name:
+    values: ['sgp-bench']
+command:
+  - python3
+  - train_sweeps.py
