@@ -32,12 +32,22 @@ svg_superglue_tasks = {
     "multi-class-classification": {
         "abbr": "mcc",
         "name": "multi-class-classification",
-        "metrics": "F1/Accuracy",
+        "metrics": "Accuracy",
         "dataset_names": {"train": "train", "valid": "val", "test": "test"},
         "inputs": ["svg_content"],
         "target": "class",
-        "metric_funcs": [accuracy_score, f1_score],
+        "metric_funcs": [accuracy_score],
         "n_labels": 5,
+    },
+    "ab-test": {
+        "abbr": "ab-test",
+        "name": "ab-test",
+        "metrics": "Accuracy",
+        "dataset_names": {"train": "train", "valid": "val", "test": "test"},
+        "inputs": ["svg_optimized"],
+        "target": "letter",
+        "metric_funcs": [accuracy_score],
+        "n_labels": 2,
     }
 }
 
@@ -176,7 +186,7 @@ def main():
     def preprocess_function(examples, task_inputs):
         input_sequences = zip(*[examples[inp] for inp in task_inputs])
         texts = [hf_tokenizer.sep_token.join(parts) for parts in input_sequences]
-        tokenized = hf_tokenizer(texts, truncation=False)
+        tokenized = hf_tokenizer(texts, truncation=True, max_length=512)
         return tokenized
 
 
