@@ -48,6 +48,16 @@ svg_superglue_tasks = {
         "target": "letter",
         "metric_funcs": [accuracy_score],
         "n_labels": 2,
+    },
+    "is_optimized": {
+        "abbr": "is_optimized",
+        "name": "is_optimized",
+        "metrics": "Accuracy",
+        "dataset_names": {"train": "train", "valid": "val", "test": "test"},
+        "inputs": ["svg", "svg_optimized"],
+        "target": "labels",
+        "metric_funcs": [accuracy_score],
+        "n_labels": 2,
     }
 }
 
@@ -186,7 +196,7 @@ def main():
     def preprocess_function(examples, task_inputs):
         input_sequences = zip(*[examples[inp] for inp in task_inputs])
         texts = [hf_tokenizer.sep_token.join(parts) for parts in input_sequences]
-        tokenized = hf_tokenizer(texts, truncation=True, max_length=512)
+        tokenized = hf_tokenizer(texts, truncation=True, max_length=2048)
         return tokenized
 
 
